@@ -21,4 +21,18 @@ angular.module('istalker', [
       StatusBar.styleDefault();
     }
   });
-});
+})
+
+  .config(function($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('search', {
+        url: '/search',
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
+      });
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/search');
+  });
+
