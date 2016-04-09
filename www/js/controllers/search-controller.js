@@ -1,26 +1,21 @@
 angular.module('istalker.controllers.search', [])
 
-  .controller('SearchCtrl', function ($scope, $state, ContactService) {
+  .controller('SearchCtrl', function ($scope, $rootScope, $state, ContactService) {
 
-  $scope.contact = {};
-    $scope.primaryPhotoUrl = '';
+    $rootScope.contact = {};
+    $rootScope.primaryPhotoUrl = '';
   //TODO: Para agilizar os testes. Remover posteriormente.
-  $scope.stalkedEmail = 'marcioggs@gmail.com';
-
+    $rootScope.stalkedEmail = 'marcioggs@gmail.com';
   $scope.searchTerm = function() {
     //TODO: Tratar erros da API.
-    ContactService.findContact($scope.stalkedEmail).then(function(contact) {
-      $scope.contact = contact;
-      //TODO: Remover alert após implementar resultado.
-      alert(contact.contactInfo.fullName);
+    ContactService.findContact($rootScope.stalkedEmail).then(function (contact) {
+      $rootScope.contact = contact;
 
-      $scope.primaryPhotoUrl = ContactService.getPrimaryPhotoURL($scope.contact);
-      alert($scope.primaryPhotoUrl);
 
+      $state.go('result', null, {reload: true});
     });
 
 
-    $state.go('result', $scope, {reload: true});
   };
 
 });
