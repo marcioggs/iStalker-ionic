@@ -8,7 +8,7 @@ angular.module('istalker.controllers.search', [])
   $rootScope.stalkedEmail = 'marcioggs@gmail.com';
 
   $scope.searchTerm = function() {
-    //TODO: Tratar erros da API.
+
     ContactService.findContact($scope.stalkedEmail).then(function (contact) {
       $rootScope.contact = contact;
         $state.go('result', ContactService, {reload: true});

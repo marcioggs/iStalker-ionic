@@ -1,18 +1,18 @@
 <ion-view class="page result">
   <ion-header-bar class="bar-stable">
     <ion-nav-bar>
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+      <ion-nav-back-button />
     </ion-nav-bar>
   </ion-header-bar>
   <ion-content class="has-header" ng-controller="ResultCtrl">
     <h2 class="title">Stalking {{contact.contactInfo.fullName}}</h2>
     <img ng-src="{{primaryPhotoUrl()}}" alt="{{contact.contactInfo.fullName}}"/>
 
-      <br>
-      <br>
-      <br>
-
-    </div>
+    <ul>
+      <li ng-repeat="profile in contact.socialProfiles">
+        <img ng-src="{{socialNetworkIconURL(profile.typeId)}}" alt="{{profile.typeId}}"/>
+        {{ profile.typeName }}; @{{ profile.username }}
+      </li>
+    </ul>
   </ion-content>
 </ion-view>
