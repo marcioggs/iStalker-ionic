@@ -30,7 +30,13 @@ angular.module('istalker', [
         url: '/search',
         templateUrl: 'templates/search.html',
         controller: 'SearchCtrl'
-      });
+      })
+
+      .state('result', {
+        url: '/result',
+        templateUrl: 'templates/result.html',
+        controller: 'ResultCtrl'
+      })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/search');

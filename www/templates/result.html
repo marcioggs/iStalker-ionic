@@ -1,0 +1,23 @@
+<ion-view class="page result">
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Stalking {{contact.contactInfo.fullName}}</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" ng-controller="ResultCtrl">
+    <div class="image"
+         ng-style="{backgroundImage: 'url(\'' +ContactService.getPrimaryPhotoURL($scope.contact)+ '\')'}"
+    >
+      <!--<div class="social-networks-list">
+        <h4 class="no-social-networks" ng-show="socialNetworks.length === 0">Nothing was found!</h4>
+        <social-networks ng-repeat="socialNetwork in socialProfiles"
+                         sn="socialNetwork"
+                         on-click="onSocialNetworkClick(socialNetwork.Id)"
+        >
+        </social-networks>
+      </div>-->
+      <br>
+      <br>
+      <br>
+
+    </div>
+  </ion-content>
+</ion-view>

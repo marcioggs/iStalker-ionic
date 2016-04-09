@@ -1,0 +1,11 @@
+<ion-view class="page social-network">
+  <ion-nav-title>{{socialNetwork.name}}</ion-nav-title>
+  <ion-content>
+    <div class="list social-network-card-list">
+      <div ng-show="pics.length === 0" class="item no-pics">
+        <h4>No pics were taken at this place :(</h4>
+      </div>
+      <pic-card ng-repeat="pic in pics" pic="pic" on-click="onPicClick(pic.picId)"></pic-card>
+    </div>
+  </ion-content>
+</ion-view>
