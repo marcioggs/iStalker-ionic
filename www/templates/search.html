@@ -2,12 +2,28 @@
   <ion-header-bar class="bar-stable">
     <h1 class="title">iStalker</h1>
   </ion-header-bar>
-  <ion-content class="has-header">
-    <label class="item item-input item-stacked-label">
-      <input type="text" placeholder="user@domain.com" ng-model="form.searchTerm">
-    </label>
-    <button class="button" ng-click="search()">
-      Stalk
-    </button>
+  <ion-content class="has-header" ng-controller="SearchCtrl">
+    <form name="searchTermForm">
+      <div class="list card">
+        <div class="item item-divider">Who do you want to Stalk?</div>
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="stalkedEmail" placeholder="user@domain.com" ng-minlength="5" required>
+        </label>
+        <!-- TODO: Msg about the error, keep it? replace by nicer css ?
+        <div class="padding">
+          <p ng-show="searchTermForm.$error.required">* Email is required</p>
+          <p ng-show="searchTermForm.$invalid && !searchTermForm.searchTerm.$pristine">* Must be a valid email address</p>
+          <p ng-show="searchTermForm.$error.minlength">* Email must be longer than 5 characters</p>
+        </div>
+        -->
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive" ng-disabled="searchTermForm.$invalid"
+                ng-click="searchTerm(stalkedEmail)">
+          Stalk
+        </button>
+      </div>
+    </form>
   </ion-content>
 </ion-pane>

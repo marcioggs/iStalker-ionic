@@ -2,11 +2,13 @@ angular.module('istalker.controllers.search', [])
 
 .controller('SearchCtrl', function($scope, ContactService) {
 
-  $scope.form = {};
+  $scope.searchTermForm = {
+    stalkedEmail: ''
+  };
 
-  $scope.search = function() {
-    alert($scope.form.searchTerm);
-    ContactService.test();
+  $scope.searchTerm = function (stalkedEmail) {
+    alert(stalkedEmail);
+    //ContactService.test();
   };
 
 });
