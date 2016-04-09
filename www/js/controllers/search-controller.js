@@ -6,9 +6,13 @@ angular.module('istalker.controllers.search', [])
     stalkedEmail: ''
   };
 
+  $scope.contact = {};
+
   $scope.searchTerm = function (stalkedEmail) {
-    alert(stalkedEmail);
-    //ContactService.test();
+    ContactService.findContact(stalkedEmail).then(function(contact) {
+      $scope.contact = contact;
+      alert(contact.contactInfo.fullName);
+    });
   };
 
 });
