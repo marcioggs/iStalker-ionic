@@ -4,10 +4,6 @@ angular.module('istalker.factories.contact', [])
 
   return {
 
-    test: function() {
-      console.log('test');
-    },
-
     findContact: function(email) {
       return $http({
         url: FULL_CONTACT_API.BASE_URL + '/person.json',
@@ -18,7 +14,7 @@ angular.module('istalker.factories.contact', [])
         }
       })
         .then(function(ret) {
-          return ret.data
+          return ret.data;
         });
     },
 
@@ -34,7 +30,7 @@ angular.module('istalker.factories.contact', [])
         }
       }
 
-      return url
+      return url;
     },
 
     getPrimaryPhotoURL: function(contact) {
