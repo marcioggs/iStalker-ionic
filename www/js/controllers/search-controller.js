@@ -11,7 +11,7 @@ angular.module('istalker.controllers.search', [])
     //TODO: Tratar erros da API.
     ContactService.findContact($scope.stalkedEmail).then(function (contact) {
       $rootScope.contact = contact;
-      $state.go('result', null, {reload: true});
+        $state.go('result', ContactService, {reload: true});
     })
     .catch(function (cause) {
       showErrorPopup(cause);
