@@ -13,9 +13,26 @@ angular.module('istalker.factories.contact', [])
           email: email
         }
       })
-        .then(function(ret) {
-          return ret.data;
-        });
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.data;
+        } else {
+          throw response;
+        }
+      }).catch(function(response) {
+        var message;
+        switch (response.status) {
+          case 202:
+            message = 'Data for this person is being prepared. Try again in 5 minutes.';
+            break;
+          case 404:
+            message = 'Person not found.';
+            break;
+          default:
+            message = 'An error has ocurred when searching for this person.';
+        }
+        throw message;
+      });
     },
 
     getPhotoURL: function(contact, typeId) {
