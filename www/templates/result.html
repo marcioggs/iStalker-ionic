@@ -5,15 +5,31 @@
       </ion-nav-back-button>
     </ion-nav-bar>
   </ion-header-bar>
-  <ion-content class="has-header" ng-controller="ResultCtrl">
-    <h2 class="title">Stalking {{contact.contactInfo.fullName}}</h2>
-    <img ng-src="{{primaryPhotoUrl()}}" alt="{{contact.contactInfo.fullName}}"/>
+  <div class="bar bar-subheader">
+    <h2 class="title">Stalking {{contact.contactInfo.givenName}}</h2>
+  </div>
 
-    <ul>
-      <li ng-repeat="profile in contact.socialProfiles">
+  <ion-content class="has-subheader" ng-controller="ResultCtrl">
+
+    <div class="card">
+      <a class="item item-thumbnail-left">
+        <img ng-src="{{primaryPhotoUrl()}}" alt="{{contact.contactInfo.fullName}}"/>
+        <h4>{{contact.contactInfo.fullName}}</h4>
+      </a>
+      <!--TODO: Ajustar para apresentar em linha e menores as demais fotos
+      TODO: Fazer tratamento para não repitir fotos-->
+      <a ng-repeat="photo in contact.photos" class="item  item-thumbnail-left">
+        <img ng-src="{{photo.url}}" alt="{{photo.type}} ">
+      </a>
+    </div>
+
+    <div class="list card">
+      <!--TODO:Adicionar link externo, provavelmente precisamos de plugin-->
+      <a ng-repeat="profile in contact.socialProfiles" class="item item-avatar">
         <img ng-src="{{socialNetworkIconURL(profile.typeId)}}" alt="{{profile.typeId}}"/>
-        {{ profile.typeName }}; @{{ profile.username }}
-      </li>
-    </ul>
+        <h2>{{profile.typeName}}</h2>
+        <h4>{{profile.username}}</h4>
+      </a>
+    </div>
   </ion-content>
 </ion-view>
