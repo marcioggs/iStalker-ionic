@@ -4,9 +4,9 @@
   </ion-header-bar>
   <ion-content class="has-header">
     <label class="item item-input item-stacked-label">
-      <input type="text" placeholder="user@domain.com">
+      <input type="text" placeholder="user@domain.com" ng-model="form.searchTerm">
     </label>
-    <button class="button">
+    <button class="button" ng-click="search()">
       Stalk
     </button>
   </ion-content>
