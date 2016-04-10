@@ -10,14 +10,14 @@ angular.module('istalker.controllers.search', [])
   $scope.searchTerm = function(stalkedEmail) {
 
     ContactService.findContact(stalkedEmail).then(function (contact) {
-      $rootScope.contact = contact;
-      HistoryService.add(stalkedEmail);
-      $state.go('result', ContactService, {reload: true});
-    })
-    .catch(function (cause) {
-      //TODO: Estudar decorator de tratamento de exceção para ver se é melhor.
-      showErrorPopup(cause);
-    });
+        $rootScope.contact = contact;
+        HistoryService.add(stalkedEmail);
+        $state.go('app.result', ContactService, {reload: true});
+      })
+      .catch(function (cause) {
+        //TODO: Estudar decorator de tratamento de exceção para ver se é melhor.
+        showErrorPopup(cause);
+      });
   }
 
   $scope.historyList = function() {

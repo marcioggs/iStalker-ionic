@@ -23,22 +23,36 @@ angular.module('istalker', [
   });
 })
 
-  .config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
 
-    $stateProvider
-      .state('search', {
-        url: '/search',
-        templateUrl: 'templates/search.html',
-        controller: 'SearchCtrl'
-      })
+  $stateProvider
+    .state('app', {
+      abstract: true,
+      templateUrl: 'templates/app.html',
+      controller: 'AppCtrl'
+    })
 
-      .state('result', {
-        url: '/result',
-        templateUrl: 'templates/result.html',
-        controller: 'ResultCtrl'
-      })
+    .state('app.search', {
+      url: '/search',
+      views: {
+        'app-view': {
+          templateUrl: 'templates/search.html',
+          controller: 'SearchCtrl'
+        }
+      }
+    })
 
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/search');
-  });
+    .state('app.result', {
+      url: '/result',
+      views: {
+        'app-view': {
+          templateUrl: 'templates/result.html',
+          controller: 'ResultCtrl'
+        }
+      }
+    })
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/search');
+});
 
