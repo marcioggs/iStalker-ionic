@@ -24,9 +24,6 @@
     "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "locator": "browser"
-    }
+    "android"
   ]
 }

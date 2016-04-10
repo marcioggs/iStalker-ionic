@@ -69,7 +69,6 @@ angular.module('istalker.factories.contact', [])
       return FULL_CONTACT_API.BASE_URL + '/icon/' + typeId + '/64/default?apiKey=' + FULL_CONTACT_API.KEY;
     },
 
-    //TODO: Remover esta função após usá-la no controller.
     test: function() {
       var obj = this;
 

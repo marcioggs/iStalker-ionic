@@ -1,4 +1,4 @@
  angular.module('istalker.controllers', [
-  'istalker.controllers.results',
+  'istalker.controllers.result',
   'istalker.controllers.search'
  ]);

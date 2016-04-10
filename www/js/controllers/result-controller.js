@@ -1,4 +1,4 @@
-angular.module('istalker.controllers.results', [])
+angular.module('istalker.controllers.result', [])
 
 .controller('ResultCtrl', function ($scope, $rootScope, ContactService) {
 
@@ -15,4 +15,6 @@ angular.module('istalker.controllers.results', [])
     window.open(url, "_blank", "location=yes");
   }
 
+  //TODO: Colocar foto de perfil genérica quando não encontrar nenhuma.
+  //TODO: Colocar @ na frente do username caso esteja preenchido.
 });
