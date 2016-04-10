@@ -16,16 +16,10 @@
         <img ng-src="{{primaryPhotoUrl()}}" alt="{{contact.contactInfo.fullName}}"/>
         <h4>{{contact.contactInfo.fullName}}</h4>
       </a>
-      <!--TODO: Ajustar para apresentar em linha e menores as demais fotos
-      TODO: Fazer tratamento para não repitir fotos-->
-      <a ng-repeat="photo in contact.photos" class="item  item-thumbnail-left">
-        <img ng-src="{{photo.url}}" alt="{{photo.type}} ">
-      </a>
     </div>
 
     <div class="list card">
-      <!--TODO:Adicionar link externo, provavelmente precisamos de plugin-->
-      <a ng-repeat="profile in contact.socialProfiles" class="item item-avatar">
+      <a ng-repeat="profile in contact.socialProfiles" class="item item-avatar" ng-click="openUrl(profile.url)">
         <img ng-src="{{socialNetworkIconURL(profile.typeId)}}" alt="{{profile.typeId}}"/>
         <h2>{{profile.typeName}}</h2>
         <h4>{{profile.username}}</h4>
