@@ -19,6 +19,9 @@
       </div>
       <div class="list card">
         <div class="item item-divider">History</div>
+        <div class="item item-text-wrap" ng-hide="historyList().length">
+          No history
+        </div>
         <div class="item item-text-wrap" ng-repeat="email in historyList()" ng-click="searchTerm(email)">
           {{email}}
         </div>

@@ -4,6 +4,7 @@ angular.module('istalker.factories.history', [])
 
   //TODO: Ver se tem como fazer bind do local storage com o model.
   //TODO: Colocar botão de excluir na interface.
+  //TODO: Estudar session storage x local storage.
   var lsKey = 'history';
 
   function listEmails() {
