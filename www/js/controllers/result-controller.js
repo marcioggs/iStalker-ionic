@@ -10,5 +10,4 @@ angular.module('istalker.controllers.result', [])
     return ContactService.getSocialNetworkIconURL(typeId);
   }
 
-  //TODO: Colocar @ na frente do username caso esteja preenchido.
 });

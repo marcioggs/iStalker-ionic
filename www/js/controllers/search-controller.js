@@ -12,7 +12,6 @@ angular.module('istalker.controllers.search', [])
         $state.go('app.result');
       })
       .catch(function (cause) {
-        //TODO: Estudar decorator de tratamento de exceção para ver se é melhor.
         $scope.showModalPopup('Error', cause);
       });
   }

@@ -11,7 +11,7 @@
       <a ng-repeat="profile in contact.socialProfiles" class="item item-avatar" ng-click="openUrl(profile.url)">
         <img ng-src="{{socialNetworkIconURL(profile.typeId)}}" alt="{{profile.typeId}}"/>
         <h2>{{profile.typeName}}</h2>
-        <h4>{{profile.username}}</h4>
+        <h4>{{profile.username? '@' : ''}}{{profile.username}}</h4>
       </a>
     </div>
   </ion-content>
