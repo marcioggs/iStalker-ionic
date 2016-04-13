@@ -1,5 +1,7 @@
 <ion-view view-title="iStalker">
+
   <ion-content class="has-header">
+    <img class="title-image" src="/img/spy.png" width="100" height="100" />
     <form name="searchTermForm">
       <div class="list card">
         <div class="item item-divider">Who do you want to Stalk?</div>
@@ -9,7 +11,7 @@
         </label>
       </div>
       <div class="padding">
-        <button type="submit" class="button button-block button-positive" ng-disabled="searchTermForm.$invalid"
+        <button type="submit" class="button button-block" ng-disabled="searchTermForm.$invalid"
                 ng-click="searchTerm(stalkedEmail)">
           Stalk
         </button>

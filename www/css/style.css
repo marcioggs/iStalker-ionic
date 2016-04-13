@@ -1,1 +1,29 @@
-/* Empty. Add your own CSS if you like */
+.bar {
+  background-color: #40C0CB;
+  color: white;
+}
+
+.button {
+  background-color: #8FBE00;
+  color: white;
+}
+
+.button-clear.button-clear {
+  color: white;
+}
+
+.pane {
+  background-color: #F9F2E7;
+}
+
+.item-divider {
+  background-color: #00A8C6;
+  color: white;
+}
+
+.title-image {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
