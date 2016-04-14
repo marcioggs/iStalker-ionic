@@ -51,7 +51,7 @@ angular.module('istalker.factories.contact', [])
     },
 
     getPrimaryPhotoURL: function(contact) {
-      var url = "/img/profile-pic.png";
+      var url = "img/profile-pic.png";
 
       if ('photos' in contact) {
         var photos = contact.photos;
