@@ -18,11 +18,11 @@ angular.module('istalker.controllers.app', [])
   };
 
   $scope.$watch($scope.isRequestingData, function(isRequestingData) {
-    if(isRequestingData){
+    if (isRequestingData) {
       $ionicLoading.show({
         template: '<ion-spinner></ion-spinner>'
       });
-    }else{
+    } else {
       $ionicLoading.hide();
     }
   });
