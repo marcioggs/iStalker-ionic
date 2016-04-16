@@ -16,7 +16,7 @@ angular.module('istalker.factories.history', [])
   }
 
   function addEmailToTop(email) {
-    var emails = listEmails();
+    var emails = listEmails(); 
     emails.unshift(email);
     updateLocalStorage(emails);
   }
